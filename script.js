@@ -1,12 +1,14 @@
 var app = angular.module("menuApp", []);
 
 app.controller('menuController', ["$scope", function($scope,$http, $location,filter){
+
+  // POR ISTO NUMA BASE DE DADOS E IR LER .|.
   $scope.data = [
-    {ref_prato: 1, nome: "Bacalhau à Brás", preco: "10.00€"}, //id = 0 no array
-    {ref_prato: 3, nome: "Arroz de Marisco", preco: "18.50€"},
-    {ref_prato: 4, nome: "Francesinha", preco: "12.5€"},
-    {ref_prato: 5, nome: "Arroz de Pato", preco: "9.00€"},
-    {ref_prato: 20, nome: "Picanha", preco: "15.00€"}
+    {ref_prato: 1, nome: "Bacalhau à Brás", descricao: "É um prato...", preco: "10.00€"}, //id = 0 no array
+    {ref_prato: 3, nome: "Arroz de Marisco", descricao: "É um prato...", preco: "18.50€"},
+    {ref_prato: 4, nome: "Francesinha", descricao: "É um prato...", preco: "12.5€"},
+    {ref_prato: 5, nome: "Arroz de Pato", descricao: "É um prato...", preco: "9.00€"},
+    {ref_prato: 20, nome: "Picanha", descricao: "É um prato...", preco: "15.00€"}
 
   ];
   
@@ -24,8 +26,9 @@ $scope.ler=function(ref_prato_click){
 	}
 
 	//Mudar os conteudos do modal
-	document.getElementById('modal_title').innerHTML= $scope.data[posicaoArray].nome;
-		
+	document.getElementById('modal_title').innerHTML = $scope.data[posicaoArray].nome;
+	document.getElementById('modal_preco').innerHTML = $scope.data[posicaoArray].preco;
+	document.getElementById('modal_descricao').innerHTML = $scope.data[posicaoArray].descricao;
 }
 
 $scope.comment=function(){
