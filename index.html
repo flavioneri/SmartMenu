@@ -12,6 +12,10 @@
     <script data-require="angular-route@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
+	<script src="http://bootstrapdocs.com/v3.1.1/docs/dist/js/bootstrap.min.js"></script>
+	<script src="http://rawgit.com/obogo/angular-focus-manager/master/build/angular-focusmanager.js"></script>
     <script src= "angular.min.js"></script>
     <script src= "script.js"></script>	
 </head>
@@ -24,7 +28,7 @@
 				<h1><span class="glyphicon glyphicon-cutlery"></span> SmartMenu</h1>
 
 				<div class="form-group">
-			       <input type="text" class="form-control" id="search" placeholder="search recipes" data-ng-model="search"/>
+			       <input type="text" class="form-control" id="search" placeholder="Pesquisar Prato" data-ng-model="search"/>
 			     </div>
 
 				<table id="myTable" class="table table-striped table-hover">
@@ -37,11 +41,30 @@
 			            	<td>{{item.nome}}</td>
 			           		<td>{{item.preco}}</td>
 			            	<td>
-			            		<button data-ng-click="ler(this)" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ler mais</button>
-			            	</td>            						            
+			            		<button name="viewdetails" ng-click="ler(item.id)" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Ler mais</button>
+								</div>
+			            	</td>     
 					    </tr>
 				</table>
-
+						<div class="modal fade bs-example-modal-lg"  focus-group focus-group-head="loop" focus-group-tail="loop" focus-stacktabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+								<div class="modal-content">
+								  <div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="modal_title">PRATO</h4>
+								  </div>
+								  <div class="modal-body" id="modal_div1">
+										FOTO DO PRATO
+								  </div>
+								  <div class="modal-body" id="modal_div2">
+										DADOS SOBRE O PRATO
+								  </div>
+								  <div class="modal-footer">
+									<button type="button" ng-click="comment()" class="btn btn-default" focus-element="autofocus" data-dismiss="modal">Comentar</button>
+								  </div>
+								</div>
+							  </div>
+						  </div>
 			</div>
 		</div>
 	</div>
