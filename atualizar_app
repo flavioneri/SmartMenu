@@ -1,0 +1,11 @@
+#!/bin/bash
+echo " ##### A atualizar o web-site em larr@dei.uminho.pt ..."
+ssh pi@larr.dei.uminho.pt &&
+cd /var/www/html/SmartMenu &&
+git pull &&
+exit && 
+echo " ##### O web-site foi atualizado !!" &&
+return
+
+echo " ##### Erro na atualização do web-site"
+
