@@ -17,6 +17,7 @@ $scope.ler=function(ref_prato_click){
 	$scope.currentId = ref_prato_click;
 	
 	// identificar linha do array com o ref_prato correspondente
+	//precisamos da posição que dita o array para conseguirmos ir buscar os restantes dados para alem da referencia do prato.
 	var posicaoArray = 0;
 	for(var i=0; i<$scope.data.length;i++){
 		if($scope.data[i].ref_prato == ref_prato_click){
@@ -26,26 +27,29 @@ $scope.ler=function(ref_prato_click){
 	}
 
 	//Mudar os conteudos do modal
-	document.getElementById('modal_title').innerHTML = $scope.data[posicaoArray].nome;
+	document.getElementById('modal_title').innerHTML = $scope.data[posicaoArray].nome; //na divisão respetiva, coloca se o texto da base de dados
 	document.getElementById('modal_preco').innerHTML = $scope.data[posicaoArray].preco;
 	document.getElementById('modal_descricao').innerHTML = $scope.data[posicaoArray].descricao;
 }
 
 
-var textoInserido;
+
 $scope.comentar=function(){
-	var comentario = document.getElementById('textarea').value;
+	
+	//Pegar no texto que foi inserido e...
+	$(document).ready(function () {
+	    var val = $.trim($("textarea").val());
+	    if (val != "") {
+	        alert(val);
+	    }else{
+	    	alert('Deve introduzir um comentário para o poder submeter!'); // quando se clica em "comentar" e nao se introduziu texto nenhum
+	    }
 
-	if(comentario!=""){
-		alert(showcomentario(this));
-	}
+	$('textarea').val(''); //depois de digitar o comentário e clicar em "comentar", apaga-se o que se escrevei no textarea
+});
 
-	if($scope.currentId>0){
-		//alert("Comentario no prato "+$scope.currentId)
-	}
+
 }
 
-
-
-
 }]);
+
