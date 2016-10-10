@@ -7,6 +7,8 @@
 	<title>SmartMenu</title>
 	<meta charset="utf-8">
 	<link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap --> 
     <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
     <script data-require="angular.js@*" data-semver="2.0.0" src="https://code.angularjs.org/2.0.0-snapshot/angular2.js"></script>
     <script data-require="angular-route@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
@@ -17,11 +19,11 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
 	<script src="http://bootstrapdocs.com/v3.1.1/docs/dist/js/bootstrap.min.js"></script>
 	<script src="http://rawgit.com/obogo/angular-focus-manager/master/build/angular-focusmanager.js"></script>
-    <script src= "angular.min.js"></script>
-    <script src= "script.js"></script>	
+    <!--<script src= "angular.min.js"></script>-->
+    <script src= "script.js"></script>		
 </head>
 
-<body data-ng-controller="menuController">
+<body data-ng-controller="menuController" data-ng-init="displayData()">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -38,55 +40,57 @@
 			       		<th>Preço por Dose</th>
 			       		<th>Descrição</th>
 			     	 </tr>
-			     	    <tr data-ng-repeat= "item in data | filter: search">
+			     	    <tr data-ng-repeat= "item in pratos | filter: search" >
 			            	<td>{{item.nome}}</td>
 			           		<td>{{item.preco}}</td>
 			            	<td>
 			            		<button name="viewdetails" ng-click="ler(item.ref_prato)" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Ler mais</button>
 								</div>
-			            	</td>     
+			            	</td>
 					    </tr>
 				</table>
 
+						
 						<!--Para aparecer o modal-->
+						
 						<div class="modal fade bs-example-modal-lg"  focus-group focus-group-head="loop" focus-group-tail="loop" focus-stacktabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 							  <div class="modal-dialog">
 								<div class="modal-content">
 
-								 <!--Parte do cabeçalho-->
+								
 								  <div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 									<h3 class="modal-title" id="modal_title">PRATO</h3>
 								  </div>
 
-								  <!--Parte do corpo (tem 2 divs => uma para a imagem e outra para a descriçao)-->
 								  <div class="modal-body" id="modal_body" style="display: flex;" >
 
+								  	  <!--Para a foto-->
 									  <div class="modal_foto" id="modal_foto" style="flex: 1; padding: 1em; border: solid;">
 										<input type="image" src="imagens/semimg.png">
 									  </div>
 						    		
-						    		<div class="modal_dados" id="modal_dados" style="flex: 1; padding: 1em; border: solid;">
-										<h5>Calorias              %</h5>
-										<h5>Total de Gordura      %</h5>
-										<h5> Gorduras Saturadas   %</h5>
-										<h5>Total Carbohidratos   %</h5>
-										<h5>Proteínas             %</h5>
-										<h5>Fibras                %</h5>
-										<h5>Preço por dose        €</h5>
-									</div>									
+
+						    		  <div class="modal_dados" id="modal_dados" style="flex: 1; padding: 1em; border: solid;">
+						    		    <!--Titulo-->
+						    			<div class="modal_dadosT" id="modal_dadosT">
+						    				<h4>Valores Nutricionais</h4>
+						    			</div>
+										
+						    			<!--Dados Nutricuinais-->
+										<div class="modal_dadosVN" id="modal_dadosVN"></div>
+									</div>		
+
 								  </div>
 
 								  <div class="modal_mural" id="modal_mural" style="display: flex; border:solid; width: 95%; margin-left: 2.5%; ">
 								  		<h3>Comentários</h3>
 								  </div>
 
-
-								  <!--Parte do rodapé (apenas para escrver o comentário-->
 								  <div class="modal-footer" id="modal_footer">
 								    <textarea rows="1" cols="60" style="margin-right: 50%;" placeholder="Digite o seu comentário..."></textarea>
 									<button id="textarea" type="button" ng-click="comentar()" class="btn btn-default" focus-element="autofocus" data-dismiss="modal" style="margin-right: -1%; margin-top:-11%;">Comentar</button>
-								  </div>
+								  </div>-
 
 								</div>
 							  </div>
