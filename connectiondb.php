@@ -14,7 +14,7 @@
     else die();
 
 
-    $query = "SELECT * FROM `.$table_name.`";
+    $query = "SELECT * FROM `".$table_name."`";
     $result = mysqli_query($connect, $query);
     $num_pratos = mysqli_num_rows($result);
     if($num_pratos > 0)
