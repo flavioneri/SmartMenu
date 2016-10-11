@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html data-ng-app="menuApp">
@@ -45,7 +43,7 @@
 
 </head>
 
-<body data-ng-controller="menuController" data-ng-init="displayData()">
+<body data-ng-controller="menuController" data-ng-init="displayDataPP()">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -62,7 +60,7 @@
 			       		<th>Preço por Dose</th>
 			       		<th>Descrição</th>
 			     	 </tr>
-			     	    <tr data-ng-repeat= "item in pratos | filter: search" >
+			     	    <tr data-ng-repeat= "item in pp | filter: search" >
 			            	<td>{{item.nome}}</td>
 			           		<td>{{item.preco}}</td>
 			            	<td>

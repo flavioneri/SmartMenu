@@ -1,0 +1,99 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:30
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-bar:before { content: "\f100"; }
+.flaticon-bill:before { content: "\f101"; }
+.flaticon-cookbook:before { content: "\f102"; }
+.flaticon-cooker:before { content: "\f103"; }
+.flaticon-cooker-1:before { content: "\f104"; }
+.flaticon-cooking:before { content: "\f105"; }
+.flaticon-cutlery:before { content: "\f106"; }
+.flaticon-daily-specials-board:before { content: "\f107"; }
+.flaticon-dinner:before { content: "\f108"; }
+.flaticon-fish:before { content: "\f109"; }
+.flaticon-grill:before { content: "\f10a"; }
+.flaticon-hot-drink:before { content: "\f10b"; }
+.flaticon-ice-cream:before { content: "\f10c"; }
+.flaticon-meat:before { content: "\f10d"; }
+.flaticon-menu:before { content: "\f10e"; }
+.flaticon-open:before { content: "\f10f"; }
+.flaticon-padnote:before { content: "\f110"; }
+.flaticon-pasta:before { content: "\f111"; }
+.flaticon-placeholder:before { content: "\f112"; }
+.flaticon-restaurant:before { content: "\f113"; }
+.flaticon-restaurant-app:before { content: "\f114"; }
+.flaticon-salver:before { content: "\f115"; }
+.flaticon-soup:before { content: "\f116"; }
+.flaticon-spicy-food:before { content: "\f117"; }
+.flaticon-sushi:before { content: "\f118"; }
+.flaticon-table:before { content: "\f119"; }
+.flaticon-take-away:before { content: "\f11a"; }
+.flaticon-vegetarian:before { content: "\f11b"; }
+.flaticon-waiter:before { content: "\f11c"; }
+.flaticon-wifi-connection:before { content: "\f11d"; }
+    
+    $font-Flaticon-bar: "\f100";
+    $font-Flaticon-bill: "\f101";
+    $font-Flaticon-cookbook: "\f102";
+    $font-Flaticon-cooker: "\f103";
+    $font-Flaticon-cooker-1: "\f104";
+    $font-Flaticon-cooking: "\f105";
+    $font-Flaticon-cutlery: "\f106";
+    $font-Flaticon-daily-specials-board: "\f107";
+    $font-Flaticon-dinner: "\f108";
+    $font-Flaticon-fish: "\f109";
+    $font-Flaticon-grill: "\f10a";
+    $font-Flaticon-hot-drink: "\f10b";
+    $font-Flaticon-ice-cream: "\f10c";
+    $font-Flaticon-meat: "\f10d";
+    $font-Flaticon-menu: "\f10e";
+    $font-Flaticon-open: "\f10f";
+    $font-Flaticon-padnote: "\f110";
+    $font-Flaticon-pasta: "\f111";
+    $font-Flaticon-placeholder: "\f112";
+    $font-Flaticon-restaurant: "\f113";
+    $font-Flaticon-restaurant-app: "\f114";
+    $font-Flaticon-salver: "\f115";
+    $font-Flaticon-soup: "\f116";
+    $font-Flaticon-spicy-food: "\f117";
+    $font-Flaticon-sushi: "\f118";
+    $font-Flaticon-table: "\f119";
+    $font-Flaticon-take-away: "\f11a";
+    $font-Flaticon-vegetarian: "\f11b";
+    $font-Flaticon-waiter: "\f11c";
+    $font-Flaticon-wifi-connection: "\f11d";

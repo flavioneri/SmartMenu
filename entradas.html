@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html data-ng-app="menuApp">
@@ -45,7 +43,7 @@
 
 </head>
 
-<body data-ng-controller="menuController" data-ng-init="displayData()">
+<body data-ng-controller="menuController" data-ng-init="displayDataEntradas()">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -53,7 +51,7 @@
 				<h1><span class="glyphicon glyphicon-cutlery"></span>SmartMenu</h1>
 
 				<div class="form-group">
-			       <input type="text" class="form-control" id="search" placeholder="Pesquisar Prato" data-ng-model="search"/>
+			       <input type="text" class="form-control" id="search" placeholder="Pesquisar Entradas" data-ng-model="search"/>
 			     </div>
 
 				<table id="myTable" class="table table-striped table-hover">
@@ -62,7 +60,7 @@
 			       		<th>Preço por Dose</th>
 			       		<th>Descrição</th>
 			     	 </tr>
-			     	    <tr data-ng-repeat= "item in pratos | filter: search" >
+			     	    <tr data-ng-repeat= "item in entradas | filter: search" >
 			            	<td>{{item.nome}}</td>
 			           		<td>{{item.preco}}</td>
 			            	<td>
@@ -121,7 +119,7 @@
 		</div>
 	</div>
 
-
+	
 
 </body>
 </html>

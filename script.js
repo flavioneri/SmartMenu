@@ -2,10 +2,31 @@ var app = angular.module("menuApp", []);
 
 app.controller('menuController', ["$scope", "$http", function($scope,$http, $location,filter){
   
- //Buscar dados à bd phpmyadmin
-$scope.displayData = function(){
-	$http.get("connectiondb.php").success(function(data){
+ //Buscar dados à bd smartmenu tabela entradas
+$scope.displayDataEntradas = function(){
+	$http.get("connectiondb.php?type=1").success(function(data){
+		$scope.entradas = data;
+	});		
+}
+
+ //Buscar dados à bd smartmenu tabela sopas
+$scope.displayDataSopas = function(){
+	$http.get("connectiondb.php?type=2").success(function(data){
+		$scope.sopas = data;
+	});		
+}
+
+ //Buscar dados à bd smartmenu tabela pp
+$scope.displayDataPP = function(){
+	$http.get("connectiondb.php?type=3").success(function(data){
 		$scope.pratos = data;
+	});		
+}
+
+ //Buscar dados à bd smartmenu tabela sobremesas
+$scope.displayDataSobremesas = function(){
+	$http.get("connectiondb.php?type=4").success(function(data){
+		$scope.sobremesas = data;
 	});		
 }
 

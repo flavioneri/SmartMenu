@@ -1,0 +1,61 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 22/06/2016 15:30
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-bar:before { content: "\f100"; }
+.flaticon-bill:before { content: "\f101"; }
+.flaticon-cookbook:before { content: "\f102"; }
+.flaticon-cooker:before { content: "\f103"; }
+.flaticon-cooker-1:before { content: "\f104"; }
+.flaticon-cooking:before { content: "\f105"; }
+.flaticon-cutlery:before { content: "\f106"; }
+.flaticon-daily-specials-board:before { content: "\f107"; }
+.flaticon-dinner:before { content: "\f108"; }
+.flaticon-fish:before { content: "\f109"; }
+.flaticon-grill:before { content: "\f10a"; }
+.flaticon-hot-drink:before { content: "\f10b"; }
+.flaticon-ice-cream:before { content: "\f10c"; }
+.flaticon-meat:before { content: "\f10d"; }
+.flaticon-menu:before { content: "\f10e"; }
+.flaticon-open:before { content: "\f10f"; }
+.flaticon-padnote:before { content: "\f110"; }
+.flaticon-pasta:before { content: "\f111"; }
+.flaticon-placeholder:before { content: "\f112"; }
+.flaticon-restaurant:before { content: "\f113"; }
+.flaticon-restaurant-app:before { content: "\f114"; }
+.flaticon-salver:before { content: "\f115"; }
+.flaticon-soup:before { content: "\f116"; }
+.flaticon-spicy-food:before { content: "\f117"; }
+.flaticon-sushi:before { content: "\f118"; }
+.flaticon-table:before { content: "\f119"; }
+.flaticon-take-away:before { content: "\f11a"; }
+.flaticon-vegetarian:before { content: "\f11b"; }
+.flaticon-waiter:before { content: "\f11c"; }
+.flaticon-wifi-connection:before { content: "\f11d"; }
