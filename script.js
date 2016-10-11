@@ -19,7 +19,7 @@ $scope.displayDataSopas = function(){
  //Buscar dados à bd smartmenu tabela pp
 $scope.displayDataPP = function(){
 	$http.get("connectiondb.php?type=3").success(function(data){
-		$scope.pratos = data;
+		$scope.pp = data;
 	});		
 }
 
