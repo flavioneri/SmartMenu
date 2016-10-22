@@ -13,21 +13,11 @@
     else if($type==4) $table_name = "sobremesas";
     else die();
 
-
-    $query = "SELECT * FROM `".$table_name."`";
-    $result = mysqli_query($connect, $query);
     
-    $num_pratos = mysqli_num_rows($result);
-    if($num_pratos > 0)
-    {
-        while($row = mysqli_fetch_array($result))
-        {
-           // This will loop through each row, now use your loop here
-            array_push($output,$row);
-        }
-    }
-    echo json_encode($output)
+    $ref_prato = $_GET['ref'];
+    $query = "UPDATE * FROM `".$table_name."` WHERE `ref_prato`=`".$ref_prato_click."`";
+    $result = mysqli_query($connect, $query);
+
+
+   
 ?>
-
-
-

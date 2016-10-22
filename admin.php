@@ -1,9 +1,19 @@
-<!DOCTYPE html>
+<?php
+    //no caso de ter a sessao aberta redireciona automaticamente qdo clicamos no bonequinho
+   session_start();
+    if(isset($_SESSION['login_user'])){
+        header("location: administracao.php");
+    }
+?>
+
 
 <html data-ng-app="menuApp">
 <head>
 	<title>SmartMenu</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+  
+
     <!--Favicon para todas as plataformas-->
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
@@ -45,37 +55,23 @@
 
     <div class="container">
 
-                <h1><span class="glyphicon glyphicon-cutlery"></span>SmartMenu</h1>
+                <a href="index.html" style="text-decoration: none"><h1><span class="glyphicon glyphicon-cutlery" href="index.html" style="text-decoration: none"></span>SmartMenu</h1></a>
 
+            <div class="container" style="text-align: center; margin-top: 20%;">
 
-             <div class="container" style="margin-left:auto; margin-right:auto; margin-top:20%; width:960px; display: flex;">
-                
-                <div class="container" id="container_entradas">
-                    <form action="entradas.html">
-                        <input type="image" src="imagens/icons/png/entradas.png" alt="Submit" width="70%">
-                    </form>
-                </div>
+                <form action="autenticacao.php" method="post">
+                <label class="grey" for="username">Username:</label>
+                <input class="field" type="text" name="username" id="username" value="" size="23" /><br><br>
+                <label class="grey" for="pass">Password:</label>
+                <input class="field" type="password" name="pass" id="pass" size="23" /><br><br>
+                <input type="submit" name="submit" value="Entrar" class="bt_register" style="border-radius: 10%" />
+                </form>
 
-                <div class="container" id="container_sopas">
-                    <form action="sopas.html">
-                        <input type="image" src="imagens/icons/png/cooking.png" alt="Submit" width="70%">
-                    </form>
-                </div>
+            </div>
 
-                <div class="container" id="container_pp">
-                    <form action="pp.html">
-                      <input type="image" src="imagens/icons/png/salver.png" alt="Submit" width="70%">
-                    </form>
-                </div>
-
-                <div class="container" id="container_sobremesas">
-                    <form action="sobremesas.html">
-                      <input type="image" src="imagens/icons/png/ice-cream.png" alt="Submit"  width="70%">
-                    </form>
-                </div>
-
-             </div>
     </div>
 
-</body>
-</html>
+
+
+    </body>
+    </html>
