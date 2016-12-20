@@ -53,7 +53,7 @@
     <script src= "script.js"></script>		
 </head>
 
-<body data-ng-controller="menuController" data-ng-init="displayDataPP()">
+<body data-ng-controller="menuController" data-ng-init="displayDataEntradas()">
 
     <div class="container" >
         <div class="row">
@@ -82,8 +82,9 @@
                         <tr data-ng-repeat= "item in pratos | filter: search" >
                             <td>{{item.nome}}</td>
                             <td style="float: right;">
-                                <button name="editarPrato" ng-click="editar(item.ref_prato)" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Editar</button>
-                                <button name="eliminarPrato" ng-click="eliminar(item.ref_prato)" class="btn btn-primary">Eliminar</button>
+                                <button name="comentarioPrato" ng-click="listarModerarComentarios(item.id)" class="btn btn-primary" data-toggle="modal" data-target="#modalComentarios">Comentários</button>
+                                <button name="editarPrato" ng-click="editar(item.id)" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Editar</button>
+                                <button name="eliminarPrato" ng-click="ocultar(item.id)" class="btn btn-primary">Eliminar</button>
                                 </div>
                             </td>
                         </tr>
@@ -137,6 +138,41 @@
                            
                       </div>
 
+        <!--Moderacao de comentarios-->
+        
+        <div id="modalComentarios" class="modal fade bs-example-modal-lg"  focus-group focus-group-head="loop" focus-group-tail="loop" focus-stacktabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h2>Comentários</h2><br><br>
+                                            <table id="tableComentarios" class="table table-striped table-hover">
+                                            <tr ng-repeat= "item in comentarios | filter: search">
+                                            	<td>
+                                            	Nome: {{item.nome}} <br>
+                                            	Email:{{item.email}}
+	                                          	</td>                                        	
+         
+												<td >
+	                                            <textarea  id="comentarioC" rows="2" cols="33" >{{item.descricao}}</textarea>
+	                                        	</td>
+	                                        	<td > 
+                                            	Exibir no ecrã:	<input type="checkbox" name="ecra" ng-checked="item.estado==0" ng-model="item.estado" ng-true-value="0" ng-false-value="1" ng-change="updateModerarComentarios(item.id,item.estado)">
+	                                          	</td>
+                                            </tr>
+                                            </table>
+                                          
+                                            <button id="textarea" type="button" ng-click="" class="btn btn-default" focus-element="autofocus" data-dismiss="modal">Fechar</button>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+
+        <!--Moderacao de comentarios-->        
+        
+        
+        
         
                   
             </div>

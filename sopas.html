@@ -65,7 +65,7 @@
 			            	<td>{{item.nome}}</td>
 			           		<td>{{item.preco}}</td>
 			            	<td>
-			            		<button name="viewdetails" ng-click="ler(item.ref_prato)" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Ler mais</button>
+			            		<button name="viewdetails" ng-click="ler(item.id)" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Ler mais</button>
 								</div>
 			            	</td>
 					    </tr>
@@ -104,15 +104,24 @@
 
 								  </div>
 
+								 									 <!-- Comentarios-->
 								  <div class="modal_mural" id="modal_mural" style="display: flex; border:solid; width: 95%; margin-left: 2.5%; ">
+
 								  		<h3>Comentários</h3>
 								  </div>
 
 								  <div class="modal-footer" id="modal_footer">
-								    <textarea rows="1" cols="60" style="margin-right: 50%;" placeholder="Digite o seu comentário..."></textarea>
-									<button id="textarea" type="button" ng-click="comentar()" class="btn btn-default" focus-element="autofocus" data-dismiss="modal" style="margin-right: -1%; margin-top:-11%;">Comentar</button>
-								  </div>
 
+								  	<form action="" method="POST">
+									<input id="email" name="email" placeholder="email" style="margin-right: 71%"/>  	
+									<input id="nomeComentador" name="nomeComentador" placeholder="Nome" style="margin-right: 71%"/>	
+
+									    <textarea id="comentario" name="comentario" rows="1" cols="60" style="margin-right: 50%; margin-top: 2%" placeholder="Digite o seu comentário..."></textarea>
+
+								    
+									<button id="comentar" type="button" ng-click="comentar(currentId)" class="btn btn-default" focus-element="autofocus" data-dismiss="modal" style="margin-right: -1%; margin-top:-11%;">Comentar</button>
+								  </div>
+								  		 <!-- Comentarios-->
 								</div>
 							  </div>
 						</div>

@@ -8,16 +8,10 @@
     if(isset($_GET['desc_prato'])) $desc_prato = $_GET['desc_prato'];
     else die(); 
     
-    $connect = mysqli_connect("localhost", "root", "", "smartmenu");
-
-    if($type==1) $table_name = "entradas";
-    else if($type==2) $table_name = "sopas";
-    else if($type==3) $table_name = "pp";
-    else if($type==4) $table_name = "sobremesas";
-    else die();
+ 	include 'connectiondb.php';
 
 
-    $query = "INSERT INTO `".$table_name."` (`ref_prato`, `nome`, `preco`, `descricao`) VALUES (NULL, '".$nome_prato."', '".$preco_prato."', '".$desc_prato."')";
+    $query = "INSERT INTO menu ( nome, preco, descricao, categoria_id, estado) VALUES ('". $nome_prato . "','" . $preco_prato . "', '" . $desc_prato . "','" . $type . "', TRUE)";
     
     $result = mysqli_query($connect, $query);
     ?>
